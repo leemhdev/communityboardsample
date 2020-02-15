@@ -28,7 +28,7 @@ jobs:
 
       - run: npm install
       - run: npm install vue
-      - run: npm audit
+      - run: npm audit fix
       - run: npm install vue-cli -g
       - run: vue --version
       - run: npm run build

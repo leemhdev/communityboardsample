@@ -6,6 +6,7 @@ import VueRouter from 'vue-router'
 import PostListPage from '@/pages/PostListPage'
 import PostViewPage from '@/pages/PostViewPage'
 import Signup       from '@/pages/Signup'
+import Signin       from '@/pages/Signin'
 
 Vue.use(VueRouter)
 
@@ -28,6 +29,11 @@ export default new VueRouter({
       path: '/signup',
       name: 'Signup',
       component: Signup
+    },
+    {
+      path: '/signin',
+      name: 'Signin',
+      component: Signin
     }
   ]
 });

@@ -31,7 +31,8 @@ jobs:
       - run: npm audit fix
       - run: sudo npm install vue-cli -g
       - run: vue --version
-      - run: npm run build
+      - run: sudo npm install axios --save
+      - run: npm run test
 
       - save_cache:
           paths:

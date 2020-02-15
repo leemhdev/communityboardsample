@@ -32,7 +32,7 @@ jobs:
       - run: sudo npm install vue-cli -g
       - run: vue --version
       - run: sudo npm install axios --save
-      - run: npm run test
+      - run: npm run build
 
       - save_cache:
           paths:
@@ -40,4 +40,4 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: yarn test
+      - run: npm run test

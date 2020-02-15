@@ -8,7 +8,8 @@
 
 <script>
 import SigninForm from '@/components/SigninForm'
-import api from '@/api'
+// import api from '@/api'
+import { mapActions } from 'vuex'
 
 export default {
     name: 'Signin',
@@ -18,12 +19,17 @@ export default {
     methods: {
         onSubmit(payload) {
             console.log(payload)
-            const {email, password} = payload
-            api.post('/auth/signin', { email, password })
+            this.signin(payload)
                 .then(res => {
-                    console.log(res.data)
+                    console.log("Login Success")
+                    this.$router.push({name: 'PostListPage'})
                 })
-        }
+                .catch(err => {
+                    console.log(err.response.data.msg)
+                    alert(err.response.data.msg)
+                })
+        },
+        ...mapActions(['signin'])
     }
 }
 </script>
